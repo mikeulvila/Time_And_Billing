@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160516195750) do
+ActiveRecord::Schema.define(version: 20160516203752) do
 
   create_table "account_entries", force: :cascade do |t|
     t.float    "time",        limit: 24
@@ -35,6 +35,8 @@ ActiveRecord::Schema.define(version: 20160516195750) do
     t.string   "state",      limit: 255
     t.integer  "employees",  limit: 4
   end
+
+  add_index "accounts", ["employees"], name: "index_accounts_on_employees", using: :btree
 
   create_table "employees_projects", force: :cascade do |t|
     t.integer  "employee_id", limit: 4
