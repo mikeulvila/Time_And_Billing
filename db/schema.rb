@@ -11,16 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160516203752) do
+ActiveRecord::Schema.define(version: 20160517212235) do
 
   create_table "account_entries", force: :cascade do |t|
     t.float    "time",        limit: 24
     t.integer  "customer_id", limit: 4
     t.integer  "employee_id", limit: 4
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
     t.integer  "account_id",  limit: 4
     t.string   "type",        limit: 255
+    t.decimal  "amount",                  precision: 10
   end
 
   create_table "accounts", force: :cascade do |t|
@@ -28,12 +29,13 @@ ActiveRecord::Schema.define(version: 20160516203752) do
     t.string   "name",       limit: 255
     t.string   "email",      limit: 255
     t.string   "about",      limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
     t.string   "city",       limit: 255
     t.integer  "zipcode",    limit: 4
     t.string   "state",      limit: 255
     t.integer  "employees",  limit: 4
+    t.decimal  "balance",                precision: 10
   end
 
   add_index "accounts", ["employees"], name: "index_accounts_on_employees", using: :btree
