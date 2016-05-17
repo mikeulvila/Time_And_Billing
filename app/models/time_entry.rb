@@ -5,6 +5,7 @@ class TimeEntry < AccountEntry
 
   before_create :calculate_amount!
   
+
   def self.per_hour
     34
   end
@@ -12,4 +13,6 @@ class TimeEntry < AccountEntry
   def calculate_amount!
     self.amount = TimeEntry.per_hour * self.time
   end
+
+
 end
