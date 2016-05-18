@@ -28,6 +28,8 @@ gem 'faker', '~>1.4.3', group: :development
 gem 'state_machine'
 
 gem 'state_machines-activerecord'
+
+gem 'paper_trail'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
