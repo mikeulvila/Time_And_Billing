@@ -1,4 +1,5 @@
 class Customer < Account
+  has_paper_trail
   has_many :time_entries
 
   scope :premier, -> { where("employees > ?", 50) }
